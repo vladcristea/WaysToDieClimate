@@ -1,0 +1,155 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Climate.Temperature"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="PageTitle" Text="You will die of..." FontFamily="Yu Gothic" FontSize="60" />
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Freezing" FontSize="30" FontFamily="Yu Gothic" Margin="0,0,0,-5"/>
+            <Grid  Grid.Row="1" Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="400"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid Name="gridFreezing" Grid.Column="0" Height="50" Width="400" Tap="gridFreezing_Tap">
+                   
+                    <!--<Grid.Background>
+                    <ImageBrush Stretch="None" ImageSource="Images/1.jpg" AlignmentY="Top" AlignmentX="Center"/>
+                </Grid.Background>-->
+                </Grid>
+                <Image Grid.Column="1" Source="Images/Facebook-Icon-2.png" Height="50" Width="50" Margin="5,0,5,0" Tap="Image_Tap"/>
+            </Grid>
+            
+
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Starvation" FontSize="30" FontFamily="Yu Gothic" Margin="0,15,0,-5"/>
+            <Grid  Grid.Row="3" Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="400"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid Name="gridStarvation" Grid.Column="0"  Height="50" Width="400" Tap="gridStarvation_Tap">
+                    <!--<Grid.Background>
+                    <ImageBrush Stretch="None" ImageSource="Images/1.jpg" AlignmentY="Top" AlignmentX="Center"/>
+                </Grid.Background>-->
+                </Grid>
+                <Image Grid.Column="1" Source="Images/Facebook-Icon-2.png" Height="50" Width="50" Margin="5,0,5,0" Tap="Image_Tap_1"/>
+            </Grid>
+
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="Dehydratation" FontSize="30"  FontFamily="Yu Gothic" Margin="0,15,0,-5"/>
+            <Grid  Grid.Row="5" Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="400"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid Name="gridDehydratation"  Height="50" Width="400" Tap="gridDehydratation_Tap" >
+                    <!--<Grid.Background>
+                    <ImageBrush Stretch="None" ImageSource="Images/1.jpg" AlignmentY="Top" AlignmentX="Center"/>
+                </Grid.Background>-->
+                </Grid>
+                <Image Grid.Column="1" Source="Images/Facebook-Icon-2.png" Height="50" Width="50" Margin="5,0,5,0" Tap="Image_Tap_2"/>
+            </Grid>
+            <TextBlock Grid.Row="6" Grid.Column="0" Text="Fire" FontSize="30"  FontFamily="Yu Gothic" Margin="0,15,0,-5"/>
+            <Grid  Grid.Row="7" Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="400"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid Name="gridFire" Height="50" Width="400" Tap="gridFire_Tap" >
+
+                    <!--<Grid.Background>
+                    <ImageBrush Stretch="None" ImageSource="Images/1.jpg" AlignmentY="Top" AlignmentX="Center"/>
+                </Grid.Background>-->
+                </Grid>
+                <Image Grid.Column="1" Source="Images/Facebook-Icon-2.png" Height="50" Width="50" Margin="5,0,5,0" Tap="Image_Tap_3"/>
+            </Grid>
+
+            <TextBlock Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Name="textBoxRandom" FontSize="30"  FontFamily="Yu Gothic" Margin="0,15,0,-5"/>
+            <Grid  Grid.Row="9"  Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="400"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid Name="gridRandom" Height="50" Width="400" Tap="gridRandom_Tap" >
+
+                    <!--<Grid.Background>
+                    <ImageBrush Stretch="None" ImageSource="Images/1.jpg" AlignmentY="Top" AlignmentX="Center"/>
+                </Grid.Background>-->
+                </Grid>
+                <Image Visibility="Collapsed" Name="randomFacebookButton" Grid.Column="1" Source="Images/Facebook-Icon-2.png" Height="50" Width="50" Margin="5,0,5,0" Tap="Image_Tap_4"/>
+            </Grid>
+            <!--<Button Grid.Row="8" Content="Share" Click="Button_Click" />-->
+            <!--<TextBlock Grid.Row="2" Grid.Column="0" Text="Dehydratation"/>
+            <TextBlock Grid.Row="2" Grid.Column="1" Name="dehydratationTextBox"/>
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="Forest Fire"/>
+            <TextBlock Grid.Row="3" Grid.Column="1" Name="fireTextBox"/>
+            <Button Grid.Row="4" Content="Share" Click="Button_Click" />
+            <Grid Grid.Row="5" Grid.ColumnSpan="2" Height="50" Width="450" >
+                <Grid.Background>
+                    <ImageBrush Stretch="None" ImageSource="Images/10168339_236391953213499_1306902807_n.jpg" AlignmentY="Top" AlignmentX="Center"/>
+                </Grid.Background>
+                <TextBlock Name="freezingTextBox" VerticalAlignment="Center" FontSize="28"/>
+            </Grid>
+            <TextBlock Grid.Row="6" Name="freezing1TextBox"/>
+            <Grid Grid.Row="7" Grid.ColumnSpan="2" Height="50" Width="450" >
+                <Grid.Background>
+                    <ImageBrush Stretch="None" ImageSource="Images/10168339_236391953213499_1306902807_n.jpg" AlignmentY="Top" AlignmentX="Center"/>
+                </Grid.Background>
+               
+            </Grid>-->
+        </Grid>
+        <phone:WebBrowser Name="Browser" Grid.Row="1"  Background="Aqua" Width="450" Height="600" Visibility="Collapsed" Navigated="Browser_Navigated"/>
+    </Grid>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>
